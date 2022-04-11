@@ -1,6 +1,9 @@
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import * as S from './styles';
+import emailjs from 'emailjs-com';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function ContactForm() {
   const { t } = useTranslation();
@@ -10,6 +13,30 @@ export default function ContactForm() {
     reset,
     formState: { errors },
   } = useForm();
+
+  const toastifySuccess = () => {
+    toast.success(t(`email.success`), {
+      position: `top-right`,
+      autoClose: 5000,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: false,
+      className: `submit-feedback success`,
+      toastId: `notifyToast`,
+    });
+  };
+
+  const toastifyError = () => {
+    toast.error(t(`email.error`), {
+      position: `top-right`,
+      autoClose: 5000,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: false,
+      className: `submit-feedback success`,
+      toastId: `notifyToast`,
+    });
+  };
 
   const onSubmit = async (data: any) => {
     const { name, email, subject, message } = data;
@@ -21,18 +48,18 @@ export default function ContactForm() {
         message,
       };
 
-      // await emailjs.send(
-      //   process.env.REACT_APP_EMAIL_SERVICE_ID as string,
-      //   process.env.REACT_APP_TEMPLATE_EMAIL_ID as string,
-      //   templateParams,
-      //   process.env.REACT_APP_USER_SERVICE_EMAIL_ID as string,
-      // );
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAIL_SERVICE as string,
+        process.env.NEXT_PUBLIC_EMAIL_TEMPLATE as string,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAIL_USER as string,
+      );
 
-      console.log(templateParams);
+      toastifySuccess();
 
       reset();
     } catch (e) {
-      console.log(`error`);
+      toastifyError();
     }
   };
 
@@ -125,6 +152,7 @@ export default function ContactForm() {
           {t(`contactForm.send`)}
         </S.Button>
       </S.Form>
+      <ToastContainer position="top-right" />
     </>
   );
 }

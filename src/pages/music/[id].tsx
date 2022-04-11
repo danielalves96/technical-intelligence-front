@@ -1,12 +1,43 @@
 import React from 'react';
+import MusicDetails from '@/components/MusicDetails';
+import API from '@/services/api';
+import { trackMapper } from '@/mappers';
 
-export default function Music() {
-  return <div />;
+export default function Music({ track }: any) {
+  return (
+    <>
+      <MusicDetails track={track} />
+    </>
+  );
 }
 
-// export async function getStaticPaths() {
-//   return {
-//     paths: [{ params: { id: `1` } }],
-//     fallback: false,
-//   };
-// }
+export async function getStaticProps(context: any) {
+  const track = await API.get(`tracks/${context.params.id}?populate=*`).then(
+    (response) => {
+      const { data } = response.data;
+      return trackMapper(data);
+    },
+  );
+  return {
+    props: { track },
+    revalidate: 60 * 60 * 12,
+  };
+}
+
+export async function getStaticPaths() {
+  const musicPaths = await API.get(`tracks`).then((response) => {
+    const { data } = response.data;
+    return data.map((track: any) => {
+      return {
+        params: {
+          id: `${track.id}`,
+        },
+      };
+    });
+  });
+
+  return {
+    paths: musicPaths,
+    fallback: false,
+  };
+}

@@ -4,9 +4,5 @@ import * as S from './styles';
 
 export default function AboutDescription() {
   const { t } = useTranslation();
-  return (
-    <ContainerDesktop>
-      <S.Paragraph>{t(`about.description`)}</S.Paragraph>
-    </ContainerDesktop>
-  );
+  return <S.Paragraph>{t(`about.description`)}</S.Paragraph>;
 }

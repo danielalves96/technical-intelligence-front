@@ -28,11 +28,13 @@ export const TrackedGrid = styled.div`
 
 export const Details = styled.div`
   width: 100%;
-  height: 3rem;
+  min-height: 3rem;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   display: flex;
   flex-direction: column;
+  font-size: 0.9rem;
+  padding-bottom: 0.5rem;
 `;
 
 export const Title = styled.span`

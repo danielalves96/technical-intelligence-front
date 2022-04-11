@@ -4,9 +4,11 @@ import SectionTitle from '@/components/SectionTitle';
 import Gallery from '@/components/Gallery';
 import { useTranslation } from 'react-i18next';
 import ContactGrid from '@/components/ContactGrid';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   const { t } = useTranslation();
+
   return (
     <>
       <Logo />
