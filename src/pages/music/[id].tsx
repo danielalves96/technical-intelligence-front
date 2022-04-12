@@ -20,7 +20,6 @@ export async function getStaticProps(context: any) {
   );
   return {
     props: { track },
-    revalidate: 60 * 60 * 12,
   };
 }
 

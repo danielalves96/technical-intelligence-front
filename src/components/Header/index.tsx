@@ -12,7 +12,13 @@ export default function Header() {
       <Container>
         <S.HeaderContent>
           <Link href="/" passHref>
-            <Image src="/images/brain.png" alt="logo" width="50" height="50" />
+            <Image
+              src="/images/brain.png"
+              alt="logo"
+              width="50"
+              height="50"
+              style={{ cursor: `pointer` }}
+            />
           </Link>
           <S.HeaderGrid>
             <S.LanguageDetector>

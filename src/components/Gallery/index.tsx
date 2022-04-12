@@ -1,21 +1,10 @@
-import { mapImages } from '@/mappers';
-import API from '@/services/api';
-import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import ImageGallery from 'react-image-gallery';
 import ContainerDesktop from '../ContainerDesktop';
 import * as S from './styles';
 
-export default function Gallery() {
+export default function Gallery({ images }: any) {
   const { t } = useTranslation();
-  const [images, setImages] = useState<any>([]);
-
-  useEffect(() => {
-    API.get(`images?populate=*`).then((response) => {
-      const { data } = response.data;
-      setImages(mapImages(data));
-    });
-  }, []);
 
   return (
     <ContainerDesktop>

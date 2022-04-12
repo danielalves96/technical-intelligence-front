@@ -14,3 +14,9 @@ export default function About() {
     </ContainerDesktop>
   );
 }
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
+}

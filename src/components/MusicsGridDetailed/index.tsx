@@ -1,9 +1,6 @@
-import { mapTracks } from '@/mappers';
-import API from '@/services/api';
 import '@brainhubeu/react-carousel/lib/style.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import ContainerDesktop from '../ContainerDesktop';
 import * as S from './styles';
 
@@ -15,17 +12,7 @@ type Music = {
   label: string;
 };
 
-export default function MusicsGridDetailed() {
-  const [tracks, setTracks] = useState([]);
-
-  useEffect(() => {
-    API.get(`tracks?populate=*`).then((response) => {
-      const { data } = response.data;
-      const tracks = mapTracks(data);
-      setTracks(tracks);
-    });
-  }, []);
-
+export default function MusicsGridDetailed({ tracks }: any) {
   return (
     <ContainerDesktop>
       <S.Grid>

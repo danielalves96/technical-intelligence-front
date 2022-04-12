@@ -1,10 +1,7 @@
-import { mapTrackstoHome } from '@/mappers';
-import API from '@/services/api';
 import Carousel, { arrowsPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import { CgChevronLeft, CgChevronRight } from 'react-icons/cg';
 import ContainerDesktop from '../ContainerDesktop';
 import * as S from './styles';
@@ -15,22 +12,7 @@ type Music = {
   is_available: boolean;
 };
 
-export default function MusicsGrid() {
-  const [tracks, setTracks] = useState([]);
-
-  useEffect(() => {
-    API.get(`tracks?populate=*`).then((response) => {
-      const { data } = response.data;
-
-      const filteredMusics = data.filter(
-        (track: any) => track.attributes.is_available_to_listners === true,
-      );
-
-      const tracks = mapTrackstoHome(filteredMusics.slice(0, 3));
-      setTracks(tracks);
-    });
-  }, []);
-
+export default function MusicsGrid({ tracks }: any) {
   return (
     <ContainerDesktop>
       <S.Grid>

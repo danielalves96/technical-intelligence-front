@@ -9,15 +9,15 @@ function I18n() {
   }
 
   const selectedLanguage = i18n.language;
+
   return (
     <div className="select is-success">
-      <select onChange={(e) => handleChangeLanguage(e.target.value)}>
-        <option value="pt-BR" selected={selectedLanguage === `pt-BR`}>
-          🇧🇷
-        </option>
-        <option value="en-US" selected={selectedLanguage === `en-US`}>
-          🇺🇸
-        </option>
+      <select
+        onChange={(e) => handleChangeLanguage(e.target.value)}
+        defaultValue={selectedLanguage}
+      >
+        <option value="pt-BR">🇧🇷</option>
+        <option value="en-US">🇺🇸</option>
       </select>
     </div>
   );
