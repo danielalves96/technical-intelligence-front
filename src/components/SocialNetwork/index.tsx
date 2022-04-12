@@ -1,12 +1,10 @@
 import React from 'react';
-import * as S from './styles';
-import { useTranslation } from 'react-i18next';
-import ContainerDesktop from '../ContainerDesktop';
-import { BsFacebook, BsYoutube, BsSpotify, BsInstagram } from 'react-icons/bs';
+import { BsFacebook, BsInstagram, BsSpotify, BsYoutube } from 'react-icons/bs';
 import { GrSoundcloud } from 'react-icons/gr';
+import ContainerDesktop from '../ContainerDesktop';
+import * as S from './styles';
 
 export const SocialNetwork = () => {
-  const { t } = useTranslation();
   return (
     <ContainerDesktop>
       <S.ListLinks>

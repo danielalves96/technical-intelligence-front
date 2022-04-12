@@ -1,9 +1,9 @@
+import emailjs from 'emailjs-com';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import * as S from './styles';
-import emailjs from 'emailjs-com';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import * as S from './styles';
 
 export default function ContactForm() {
   const { t } = useTranslation();

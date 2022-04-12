@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { GiTechnoHeart } from 'react-icons/gi';
 import Container from '../Container';
 import * as S from './styles';
+
 export default function Footer() {
   const { t } = useTranslation();
 

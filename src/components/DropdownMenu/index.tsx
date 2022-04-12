@@ -1,11 +1,9 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
-
+import { useTranslation } from 'react-i18next';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { RiCloseFill } from 'react-icons/ri';
 import { I18n } from '../i18n';
-import { useTranslation } from 'react-i18next';
-
 import * as S from './styles';
 
 export default function DropdownMenu() {

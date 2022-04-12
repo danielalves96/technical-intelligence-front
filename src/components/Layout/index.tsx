@@ -1,8 +1,8 @@
 import Head from 'next/head';
+import { FaArrowAltCircleUp } from 'react-icons/fa';
+import ScrollToTop from 'react-scroll-to-top';
 import Footer from '../Footer';
 import Header from '../Header';
-import ScrollToTop from 'react-scroll-to-top';
-import { FaArrowAltCircleUp } from 'react-icons/fa';
 import { SocialNetwork } from '../SocialNetwork';
 
 export default function Layout({ children }: any) {

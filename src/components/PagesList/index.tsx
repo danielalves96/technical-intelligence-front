@@ -1,7 +1,7 @@
-import React from 'react';
 import Link from 'next/link';
-import * as S from '../Header/styles';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+import * as S from '../Header/styles';
 
 export const PagesList = () => {
   const { t } = useTranslation();

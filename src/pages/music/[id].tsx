@@ -1,7 +1,7 @@
-import React from 'react';
 import MusicDetails from '@/components/MusicDetails';
-import API from '@/services/api';
 import { trackMapper } from '@/mappers';
+import API from '@/services/api';
+import React from 'react';
 
 export default function Music({ track }: any) {
   return (

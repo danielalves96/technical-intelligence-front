@@ -1,11 +1,11 @@
+import ContactGrid from '@/components/ContactGrid';
+import Gallery from '@/components/Gallery';
 import Logo from '@/components/Logo';
 import MusicsGrid from '@/components/MusicsGrid';
 import SectionTitle from '@/components/SectionTitle';
-import Gallery from '@/components/Gallery';
-import { useTranslation } from 'react-i18next';
-import ContactGrid from '@/components/ContactGrid';
-import API from '@/services/api';
 import { mapImages, mapTrackstoHome } from '@/mappers';
+import API from '@/services/api';
+import { useTranslation } from 'react-i18next';
 
 export default function Home({ tracks, images }: any) {
   const { t } = useTranslation();

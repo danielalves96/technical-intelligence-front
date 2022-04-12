@@ -60,6 +60,10 @@ export const TrackData = styled.div`
 export const Description = styled.span`
   white-space: pre-line;
   font-size: 0.8rem;
+
+  @media (max-width: 600px) {
+    text-align: center;
+  }
 `;
 
 export const Texts = styled.div`
