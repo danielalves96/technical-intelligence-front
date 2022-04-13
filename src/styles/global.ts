@@ -20,7 +20,6 @@ a {
 
 * {
   box-sizing: border-box;
-  /* color: #FFFFFF; */
 }
 
 span { color: #FFFFFF }

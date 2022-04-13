@@ -18,7 +18,9 @@
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
     "postinstall": "husky install",
-    "commit": "cz"
+    "commit": "cz",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "lint-staged": {
     "./src/**/*.{ts,js,jsx,tsx}": [
@@ -47,8 +49,16 @@
     "styled-components": "5.3.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.9",
     "@commitlint/cli": "16.2.3",
     "@commitlint/config-conventional": "16.2.1",
+    "@storybook/addon-actions": "^6.4.21",
+    "@storybook/addon-essentials": "^6.4.21",
+    "@storybook/addon-interactions": "^6.4.21",
+    "@storybook/addon-links": "^6.4.21",
+    "@storybook/preset-scss": "1.0.3",
+    "@storybook/react": "^6.4.21",
+    "@storybook/testing-library": "^0.0.9",
     "@types/brainhubeu__react-carousel": "2.0.5",
     "@types/node": "16.11.26",
     "@types/react": "17.0.43",
@@ -57,8 +67,10 @@
     "@types/styled-components": "5.1.24",
     "@typescript-eslint/eslint-plugin": "5.17.0",
     "@typescript-eslint/parser": "5.17.0",
+    "babel-loader": "^8.2.4",
     "babel-plugin-styled-components": "2.0.6",
     "commitizen": "4.2.4",
+    "css-loader": "^5.1.1",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.12.0",
     "eslint-config-next": "12.1.4",
@@ -68,6 +80,10 @@
     "husky": "7.0.4",
     "lint-staged": "12.3.7",
     "prettier": "2.6.2",
+    "sass": "1.50.0",
+    "sass-loader": "^10",
+    "storybook-react-i18next": "1.0.20",
+    "style-loader": "^2.0.0",
     "typescript": "4.6.3"
   },
   "config": {

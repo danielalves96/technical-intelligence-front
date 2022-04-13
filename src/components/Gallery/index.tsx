@@ -3,7 +3,16 @@ import ImageGallery from 'react-image-gallery';
 import ContainerDesktop from '../ContainerDesktop';
 import * as S from './styles';
 
-export default function Gallery({ images }: any) {
+type Image = {
+  original: string;
+  thumbnail: string;
+};
+
+type Images = {
+  images: Image[];
+};
+
+export default function Gallery({ images }: Images) {
   const { t } = useTranslation();
 
   return (

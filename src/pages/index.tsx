@@ -1,4 +1,5 @@
 import ContactGrid from '@/components/ContactGrid';
+import Container from '@/components/Container';
 import Gallery from '@/components/Gallery';
 import Logo from '@/components/Logo';
 import MusicsGrid from '@/components/MusicsGrid';
@@ -12,7 +13,9 @@ export default function Home({ tracks, images }: any) {
 
   return (
     <>
-      <Logo />
+      <Container>
+        <Logo />
+      </Container>
       <SectionTitle title={t(`section.lastReleases`)} />
       <MusicsGrid tracks={tracks} />
       <SectionTitle title={t(`section.photoGallery`)} />
