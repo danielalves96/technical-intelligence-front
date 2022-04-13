@@ -16,8 +16,8 @@ function I18n() {
         onChange={(e) => handleChangeLanguage(e.target.value)}
         defaultValue={selectedLanguage}
       >
-        <option value="pt-BR">🇧🇷</option>
-        <option value="en-US">🇺🇸</option>
+        <option value="pt_BR">🇧🇷</option>
+        <option value="en_US">🇺🇸</option>
       </select>
     </div>
   );

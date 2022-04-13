@@ -25,7 +25,6 @@ export default function MusicDetails({ track }: any) {
               <span>BPM: {track.bpm}</span>
             </S.TrackValues>
           </S.Texts>
-
           <audio
             controls
             controlsList="noplaybackrate nodownload"
