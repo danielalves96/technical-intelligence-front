@@ -34,7 +34,7 @@ export default {
       limitSubject: `Please use 75 characters or less`,
     },
     about: {
-      description: `Daniel Alves is the mind behind the Technical Intelligence, musician and music producer, Daniel Alves knowed Psytrance in 2017, and it was where he started his career in the trance world with a progressive psytrance project, which is not in his career today . Over the years, Daniel improved his production and mixing techniques, finding the style he most identified with, and thus the Technical Intelligence project was born! Turned to Fullon, where the songs aim to touch listeners in a unique way, with unknown and psychedelic timbres and effects, accompanied by a dancing groove that promises an unforgettable experience for all listeners.`,
+      description: `Daniel Alves is the mind behind the Technical Intelligence, musician, and music producer, Daniel Alves knew Psytrance in 2017, and it was where he started his career in the trance world with a progressive psytrance project, which is not in his career today. Over the years, Daniel improved his production and mixing techniques, finding the style he most identified with, and thus the Technical Intelligence project was born! Turned to Fullon, where the songs aim to touch listeners uniquely, with unknown and psychedelic sounds and effects, accompanied by a dancing groove that promises an unforgettable experience for all listeners.`,
     },
     email: {
       success: `Email sent!`,
