@@ -44,6 +44,14 @@ export default function DropdownMenu() {
                   {t(`pagesList.contact`)}
                 </span>
               </Link>
+              <a
+                href="https://technicalintelligence.lojaintegrada.com.br/"
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                {t(`pagesList.store`)}
+              </a>
             </S.SidebarLinks>
           </S.Sidebar>
           <S.Backdrop onClick={() => setIsOpen(!isOpen)} />
