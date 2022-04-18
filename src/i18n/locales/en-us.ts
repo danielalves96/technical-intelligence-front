@@ -6,6 +6,7 @@ export default {
       musics: `Musics`,
       about: `About`,
       contact: `Contact`,
+      store: `Store`,
     },
     footer: {
       createdBy: `Created by`,
