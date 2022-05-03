@@ -36,6 +36,7 @@ export function trackMapper(track: any) {
     title: track.attributes.track_name,
     label: track.attributes.label,
     is_available: track.attributes.is_available_to_listners,
+    artists: track.attributes.artists,
   };
 }
 

@@ -19,7 +19,7 @@ Default.args = {
     name: `Inside This`,
     description: `Mix & Master by: Audiosonic\n\nRelease by:\nRudá records\n\nFollow Technical Intelligence 👇🏻\n`,
     tone: `F#`,
-    bpm: `145`,
+    bpm: `142`,
     download_link: `https://pumpyoursound.com/f/technicalintelligence/technical-intelligence-inside-this/131150`,
     soundcloud: `https://soundcloud.com/technical-intelligence/inside-this`,
     youtube: `https://www.youtube.com/watch?v=eZkJktsv8Ps`,
