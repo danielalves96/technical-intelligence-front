@@ -4,6 +4,7 @@ export function mapTrackstoHome(data: any) {
       id: track.id,
       cover_art: track.attributes.cover_art.data.attributes.url,
       is_available: track.attributes.is_available_to_listners,
+      slug: track.attributes.slug,
     };
   });
 }
@@ -16,6 +17,7 @@ export function mapTracks(data: any) {
       title: track.attributes.track_name,
       label: track.attributes.label,
       is_available: track.attributes.is_available_to_listners,
+      slug: track.attributes.slug,
     };
   });
 }

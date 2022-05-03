@@ -10,6 +10,7 @@ type Music = {
   id: number;
   cover_art: string;
   is_available: boolean;
+  slug: string;
 };
 
 export default function MusicsGrid({ tracks }: any) {
@@ -20,7 +21,7 @@ export default function MusicsGrid({ tracks }: any) {
           <>
             {music.is_available && (
               <S.TrackedGrid key={music.id}>
-                <Link href={`/music/${music.id}`} passHref>
+                <Link href={`/music/${music.slug}`} passHref>
                   <Image
                     src={music.cover_art}
                     alt="cover"
