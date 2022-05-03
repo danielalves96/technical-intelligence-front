@@ -14,6 +14,10 @@ export const TrackedGrid = styled.div`
   cursor: pointer;
   max-width: 280px;
 
+  img {
+    border-radius: 0.5rem;
+  }
+
   &:hover {
     opacity: 0.8;
     transition: opacity 0.2s;

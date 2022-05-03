@@ -12,6 +12,11 @@ export const Main = styled.div`
 
 export const CoverArt = styled.div`
   max-width: 400px;
+
+  img {
+    border-radius: 0.5rem;
+  }
+
   @media (max-width: 600px) {
     display: none;
   }

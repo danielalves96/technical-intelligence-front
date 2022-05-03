@@ -18,7 +18,7 @@ export default function MusicDetails({ track }: any) {
           </S.CoverArtMobile>
           <S.Texts>
             <S.Title>{track.name}</S.Title>
-            <span>Technical Intelligence</span>
+            <span>{track.artists}</span>
             <S.TrackValues>
               <span>Label: {track.label}</span>
               <span>Tone: {track.tone}</span>

@@ -13,7 +13,7 @@ export const Grid = styled.div`
 
 export const TrackedGrid = styled.div`
   cursor: pointer;
-  max-width: 200px;
+  max-width: 225px;
   background: #333;
 
   &:hover {
