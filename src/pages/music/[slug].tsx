@@ -12,12 +12,12 @@ export default function Music({ track }: any) {
 }
 
 export async function getStaticProps(context: any) {
-  const track = await API.get(`tracks/${context.params.id}?populate=*`).then(
-    (response) => {
-      const { data } = response.data;
-      return trackMapper(data);
-    },
-  );
+  const track = await API.get(
+    `tracks?filters[slug]=${context.params.slug}&populate=*`,
+  ).then((response) => {
+    const { data } = response.data;
+    return trackMapper(data.shift());
+  });
   return {
     props: { track },
   };
@@ -29,7 +29,7 @@ export async function getStaticPaths() {
     return data.map((track: any) => {
       return {
         params: {
-          id: `${track.id}`,
+          slug: `${track.attributes.slug}`,
         },
       };
     });
