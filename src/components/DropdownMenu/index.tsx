@@ -44,6 +44,11 @@ export default function DropdownMenu() {
                   {t(`pagesList.contact`)}
                 </span>
               </Link>
+              <Link href="/downloads" passHref>
+                <span onClick={() => setIsOpen(!isOpen)}>
+                  {t(`pagesList.downloads`)}
+                </span>
+              </Link>
               <a
                 href="https://technicalintelligence.lojaintegrada.com.br/"
                 target="_blank"

@@ -7,6 +7,7 @@ export default {
       about: `Sobre`,
       contact: `Contato`,
       store: `Loja`,
+      downloads: `Downloads`,
     },
     footer: {
       createdBy: `Desenvolvido por`,
@@ -40,6 +41,9 @@ export default {
     email: {
       success: `Email enviado!`,
       error: `Ocorreu um erro, tente novamente`,
+    },
+    downloads: {
+      download: `Download`,
     },
   },
 };
