@@ -29,7 +29,7 @@ export const LanguageDetector = styled.div`
   align-items: center;
   gap: 1.8rem;
 
-  @media (max-width: 580px) {
+  @media (max-width: 710px) {
     display: none;
   }
 `;
@@ -38,7 +38,7 @@ export const HamburgerMenu = styled.div`
   display: flex;
   align-items: center;
 
-  @media (min-width: 580px) {
+  @media (min-width: 710px) {
     display: none;
   }
 `;
