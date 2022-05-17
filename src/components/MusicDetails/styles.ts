@@ -37,6 +37,12 @@ export const Title = styled.span`
   color: #0acea2;
   font-size: 2rem;
   font-weight: bold;
+
+  @media (max-width: 600px) {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 export const TrackValues = styled.div`
