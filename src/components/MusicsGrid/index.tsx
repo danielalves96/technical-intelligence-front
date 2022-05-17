@@ -52,7 +52,7 @@ export default function MusicsGrid({ tracks }: any) {
             {tracks.map((music: Music) => (
               <>
                 {music.is_available && (
-                  <Link key={music.id} href={`/music/${music.id}`} passHref>
+                  <Link key={music.id} href={`/music/${music.slug}`} passHref>
                     <Image
                       src={music.cover_art}
                       alt="cover"
