@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 import { BsSpotify, BsYoutube } from 'react-icons/bs';
 import { FaCloudDownloadAlt } from 'react-icons/fa';
 import { GrSoundcloud } from 'react-icons/gr';
@@ -6,6 +7,7 @@ import ContainerDesktop from '../ContainerDesktop';
 import * as S from './styles';
 
 export default function MusicDetails({ track }: any) {
+  const { t } = useTranslation();
   return (
     <ContainerDesktop>
       <S.Main>
@@ -20,9 +22,15 @@ export default function MusicDetails({ track }: any) {
             <S.Title>{track.name}</S.Title>
             <span>{track.artists}</span>
             <S.TrackValues>
-              <span>Label: {track.label}</span>
-              <span>Tone: {track.tone}</span>
-              <span>BPM: {track.bpm}</span>
+              <span>
+                {t(`musicDetails.label`)}: {track.label}
+              </span>
+              <span>
+                {t(`musicDetails.tone`)}: {track.tone}
+              </span>
+              <span>
+                {t(`musicDetails.bpm`)}: {track.bpm}
+              </span>
             </S.TrackValues>
           </S.Texts>
           <audio

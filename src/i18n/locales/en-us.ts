@@ -45,5 +45,10 @@ export default {
     downloads: {
       download: `Download`,
     },
+    musicDetails: {
+      label: `Label`,
+      tone: `Tone`,
+      bpm: `BPM`,
+    },
   },
 };
