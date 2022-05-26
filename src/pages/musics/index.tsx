@@ -15,11 +15,13 @@ export default function Home({ tracks }: any) {
 }
 
 export async function getStaticProps() {
-  const tracks = await API.get(`tracks?populate=*`).then((response) => {
-    const { data } = response.data;
-    const tracks = mapTracks(data);
-    return tracks;
-  });
+  const tracks = await API.get(`tracks?populate=*&sort[0]=id%3Adesc`).then(
+    (response) => {
+      const { data } = response.data;
+      const tracks = mapTracks(data);
+      return tracks;
+    },
+  );
   return {
     props: { tracks },
   };

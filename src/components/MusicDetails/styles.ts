@@ -5,13 +5,14 @@ export const Main = styled.div`
   gap: 3rem;
 
   @media (min-width: 600px) {
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
   }
 `;
 
 export const CoverArt = styled.div`
   max-width: 400px;
+  margin-top: 0.6rem;
 
   img {
     border-radius: 0.5rem;

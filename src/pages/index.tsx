@@ -27,16 +27,18 @@ export default function Home({ tracks, images }: any) {
 }
 
 export async function getStaticProps() {
-  const tracks = await API.get(`tracks?populate=*`).then((response) => {
-    const { data } = response.data;
+  const tracks = await API.get(`tracks?populate=*&sort[0]=id%3Adesc`).then(
+    (response) => {
+      const { data } = response.data;
 
-    const filteredMusics = data.filter(
-      (track: any) => track.attributes.is_available_to_listners === true,
-    );
+      const filteredMusics = data.filter(
+        (track: any) => track.attributes.is_available_to_listners === true,
+      );
 
-    const tracks = mapTrackstoHome(filteredMusics.slice(0, 3));
-    return tracks;
-  });
+      const tracks = mapTrackstoHome(filteredMusics.slice(0, 3));
+      return tracks;
+    },
+  );
 
   const images = await API.get(`images?populate=*`).then((response) => {
     const { data } = response.data;
