@@ -50,6 +50,7 @@ export function mapImages(data: any) {
     };
   });
 }
+
 export function mapDownload(download: any) {
   return {
     id: download.id,
