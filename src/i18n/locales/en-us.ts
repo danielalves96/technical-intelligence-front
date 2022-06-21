@@ -7,7 +7,6 @@ export default {
       about: `About`,
       contact: `Contact`,
       store: `Store`,
-      downloads: `Downloads`,
     },
     footer: {
       createdBy: `Created by`,
@@ -41,9 +40,6 @@ export default {
     email: {
       success: `Email sent!`,
       error: `An error has occurred, please try again`,
-    },
-    downloads: {
-      download: `Download`,
     },
     musicDetails: {
       label: `Label`,

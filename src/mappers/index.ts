@@ -50,19 +50,6 @@ export function mapImages(data: any) {
     };
   });
 }
-
-export function mapDownloads(data: any) {
-  return data.map((download: any) => {
-    return {
-      id: download.id,
-      slug: download.attributes.slug,
-      title: download.attributes.title,
-      subtitle: download.attributes.subtitle,
-      cover: download.attributes.cover.data.attributes.url,
-    };
-  });
-}
-
 export function mapDownload(download: any) {
   return {
     id: download.id,
