@@ -39,7 +39,7 @@ export default function MusicDetails({ track }: any) {
             style={{ width: `100%` }}
           >
             <source src={track.audio_file} type="audio/mp3" />
-            Your browser does not support the audio element.
+            Your browser does not support the esse audio.
           </audio>
           <S.ListLinks>
             <li>
