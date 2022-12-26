@@ -1,7 +1,10 @@
+import { useTracksHomeQuery } from '@/generated/graphql';
+import { mapTrackstoHome } from '@/mappers';
 import Carousel, { arrowsPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { CgChevronLeft, CgChevronRight } from 'react-icons/cg';
 import ContainerDesktop from '../ContainerDesktop';
 import * as S from './styles';
@@ -13,11 +16,21 @@ type Music = {
   slug: string;
 };
 
-export default function MusicsGrid({ tracks }: any) {
+export default function MusicsGrid() {
+  const [{ data }] = useTracksHomeQuery();
+  const [tracks, setTracks] = useState([]);
+
+  useEffect(() => {
+    const tracks = mapTrackstoHome(data);
+
+    setTracks(tracks);
+  }, [data]);
+
+  console.log(data);
   return (
     <ContainerDesktop>
       <S.Grid>
-        {tracks.map((music: Music) => (
+        {tracks?.map((music: Music) => (
           <>
             {music.is_available && (
               <S.TrackedGrid key={music.id}>
@@ -49,7 +62,7 @@ export default function MusicsGrid({ tracks }: any) {
               },
             ]}
           >
-            {tracks.map((music: Music) => (
+            {tracks?.map((music: Music) => (
               <>
                 {music.is_available && (
                   <Link key={music.id} href={`/music/${music.slug}`} passHref>
