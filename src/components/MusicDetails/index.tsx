@@ -8,6 +8,7 @@ import * as S from './styles';
 
 export default function MusicDetails({ track }: any) {
   const { t } = useTranslation();
+
   return (
     <ContainerDesktop>
       <S.Main>

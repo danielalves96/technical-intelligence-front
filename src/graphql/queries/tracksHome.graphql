@@ -1,0 +1,8 @@
+query TracksHome {
+  tracks(orderBy: releaseNumber_DESC, where: {isAvailable: true}, first: 3) {
+    id
+    coverArt
+    isAvailable
+    slug
+  }
+}

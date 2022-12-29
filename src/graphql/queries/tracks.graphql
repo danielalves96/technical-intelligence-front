@@ -1,0 +1,10 @@
+query Tracks {
+  tracks(orderBy: releaseNumber_DESC, last: 100) {
+    id
+    coverArt
+    label
+    title
+    isAvailable
+    slug
+  }
+}
