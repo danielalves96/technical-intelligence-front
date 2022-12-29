@@ -1,20 +1,8 @@
 query TracksHome {
   tracks(orderBy: releaseNumber_DESC, where: {isAvailable: true}, first: 3) {
     id
-    audioFile
-    bpm
     coverArt
-    description
-    downloadLink
-    label
-    name
-    spotify
-    soundcloud
-    title
-    tone
-    youtube
     isAvailable
-    releaseNumber
     slug
   }
 }

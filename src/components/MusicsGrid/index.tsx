@@ -22,11 +22,9 @@ export default function MusicsGrid() {
 
   useEffect(() => {
     const tracks = mapTrackstoHome(data);
-
     setTracks(tracks);
   }, [data]);
 
-  console.log(data);
   return (
     <ContainerDesktop>
       <S.Grid>

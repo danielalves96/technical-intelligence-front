@@ -3653,7 +3653,6 @@ export type TrackUpdateManyInput = {
   label?: InputMaybe<Scalars['String']>;
   name?: InputMaybe<Scalars['String']>;
   releaseNumber?: InputMaybe<Scalars['Int']>;
-  slug?: InputMaybe<Scalars['String']>;
   soundcloud?: InputMaybe<Scalars['String']>;
   spotify?: InputMaybe<Scalars['String']>;
   title?: InputMaybe<Scalars['String']>;
@@ -4096,6 +4095,7 @@ export type TrackWhereStageInput = {
 /** References Track record uniquely */
 export type TrackWhereUniqueInput = {
   id?: InputMaybe<Scalars['ID']>;
+  slug?: InputMaybe<Scalars['String']>;
 };
 
 export type UnpublishLocaleInput = {
@@ -4595,39 +4595,19 @@ export type ImagesQuery = {
   images: Array<{ __typename?: 'Image'; id: string; url?: string | null }>;
 };
 
-export type TracksQueryVariables = Exact<{ [key: string]: never }>;
+export type GetSingleTrackQueryVariables = Exact<{
+  slug?: InputMaybe<Scalars['String']>;
+}>;
 
-export type TracksQuery = {
+export type GetSingleTrackQuery = {
   __typename?: 'Query';
-  tracks: Array<{
+  track?: {
     __typename?: 'Track';
     id: string;
     audioFile: string;
     bpm: string;
     coverArt: string;
-    description: string;
-    downloadLink: string;
-    isAvailable?: boolean | null;
-    label: string;
-    name: string;
-    spotify: string;
-    soundcloud: string;
-    title: string;
-    tone: string;
-    youtube: string;
-  }>;
-};
-
-export type TracksHomeQueryVariables = Exact<{ [key: string]: never }>;
-
-export type TracksHomeQuery = {
-  __typename?: 'Query';
-  tracks: Array<{
-    __typename?: 'Track';
-    id: string;
-    audioFile: string;
-    bpm: string;
-    coverArt: string;
+    artists?: string | null;
     description: string;
     downloadLink: string;
     label: string;
@@ -4639,6 +4619,34 @@ export type TracksHomeQuery = {
     youtube: string;
     isAvailable?: boolean | null;
     releaseNumber?: number | null;
+    slug?: string | null;
+  } | null;
+};
+
+export type TracksQueryVariables = Exact<{ [key: string]: never }>;
+
+export type TracksQuery = {
+  __typename?: 'Query';
+  tracks: Array<{
+    __typename?: 'Track';
+    id: string;
+    coverArt: string;
+    label: string;
+    title: string;
+    isAvailable?: boolean | null;
+    slug?: string | null;
+  }>;
+};
+
+export type TracksHomeQueryVariables = Exact<{ [key: string]: never }>;
+
+export type TracksHomeQuery = {
+  __typename?: 'Query';
+  tracks: Array<{
+    __typename?: 'Track';
+    id: string;
+    coverArt: string;
+    isAvailable?: boolean | null;
     slug?: string | null;
   }>;
 };
@@ -4660,16 +4668,16 @@ export function useImagesQuery(
     ...options,
   });
 }
-export const TracksDocument = gql`
-  query Tracks {
-    tracks(orderBy: artists_DESC, last: 100) {
+export const GetSingleTrackDocument = gql`
+  query GetSingleTrack($slug: String) {
+    track(where: { slug: $slug }) {
       id
       audioFile
       bpm
       coverArt
+      artists
       description
       downloadLink
-      isAvailable
       label
       name
       spotify
@@ -4677,6 +4685,30 @@ export const TracksDocument = gql`
       title
       tone
       youtube
+      isAvailable
+      releaseNumber
+      slug
+    }
+  }
+`;
+
+export function useGetSingleTrackQuery(
+  options?: Omit<Urql.UseQueryArgs<GetSingleTrackQueryVariables>, 'query'>,
+) {
+  return Urql.useQuery<GetSingleTrackQuery, GetSingleTrackQueryVariables>({
+    query: GetSingleTrackDocument,
+    ...options,
+  });
+}
+export const TracksDocument = gql`
+  query Tracks {
+    tracks(orderBy: releaseNumber_DESC, last: 100) {
+      id
+      coverArt
+      label
+      title
+      isAvailable
+      slug
     }
   }
 `;
@@ -4697,20 +4729,8 @@ export const TracksHomeDocument = gql`
       first: 3
     ) {
       id
-      audioFile
-      bpm
       coverArt
-      description
-      downloadLink
-      label
-      name
-      spotify
-      soundcloud
-      title
-      tone
-      youtube
       isAvailable
-      releaseNumber
       slug
     }
   }

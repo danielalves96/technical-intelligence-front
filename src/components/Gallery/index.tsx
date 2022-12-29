@@ -1,19 +1,15 @@
+import { useImagesQuery } from '@/generated/graphql';
+import { mapImages } from '@/mappers';
 import { useTranslation } from 'react-i18next';
 import ImageGallery from 'react-image-gallery';
 import ContainerDesktop from '../ContainerDesktop';
 import * as S from './styles';
 
-type Image = {
-  original: string;
-  thumbnail: string;
-};
-
-type Images = {
-  images: Image[];
-};
-
-export default function Gallery({ images }: Images) {
+export default function Gallery() {
   const { t } = useTranslation();
+
+  const [{ data }] = useImagesQuery();
+  const images = mapImages(data);
 
   return (
     <ContainerDesktop>

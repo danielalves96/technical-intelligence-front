@@ -1,0 +1,21 @@
+query GetSingleTrack($slug: String) {
+  track(where: {slug: $slug}) {
+    id
+    audioFile
+    bpm
+    coverArt
+    artists
+    description
+    downloadLink
+    label
+    name
+    spotify
+    soundcloud
+    title
+    tone
+    youtube
+    isAvailable
+    releaseNumber
+    slug
+  }
+}

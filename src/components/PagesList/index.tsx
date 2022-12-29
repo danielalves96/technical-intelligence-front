@@ -19,7 +19,7 @@ export const PagesList = () => {
       <li>
         <Link href="/contact">{t(`pagesList.contact`)}</Link>
       </li>
-      <li>
+      {/* <li>
         <a
           href="https://technicalintelligence.lojaintegrada.com.br/"
           target="_blank"
@@ -27,7 +27,7 @@ export const PagesList = () => {
         >
           {t(`pagesList.store`)}
         </a>
-      </li>
+      </li> */}
     </S.ListLinks>
   );
 };

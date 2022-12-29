@@ -1,42 +1,30 @@
 import MusicDetails from '@/components/MusicDetails';
+import { GetSingleTrackDocument } from '@/generated/graphql';
 import { trackMapper } from '@/mappers';
-import API from '@/services/api';
-import React from 'react';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import { useQuery } from 'urql';
 
-export default function Music({ track }: any) {
-  return (
-    <>
-      <MusicDetails track={track} />
-    </>
-  );
-}
+export default function Music() {
+  const router = useRouter();
+  const { slug } = router.query;
 
-export async function getStaticProps(context: any) {
-  const track = await API.get(
-    `tracks?filters[slug]=${context.params.slug}&populate=*`,
-  ).then((response) => {
-    const { data } = response.data;
-    return trackMapper(data.shift());
-  });
-  return {
-    props: { track },
-  };
-}
+  const [track, setTrack] = useState<any>();
 
-export async function getStaticPaths() {
-  const musicPaths = await API.get(`tracks`).then((response) => {
-    const { data } = response.data;
-    return data.map((track: any) => {
-      return {
-        params: {
-          slug: `${track.attributes.slug}`,
-        },
-      };
-    });
+  const [result] = useQuery({
+    query: GetSingleTrackDocument,
+    variables: { slug },
   });
 
-  return {
-    paths: musicPaths,
-    fallback: false,
-  };
+  useEffect(() => {
+    const { data } = result;
+
+    const trackData = data?.track;
+
+    const trackDetails = trackMapper(trackData);
+
+    setTrack(trackDetails);
+  }, [result]);
+
+  return track ? <MusicDetails track={track} /> : <></>;
 }
