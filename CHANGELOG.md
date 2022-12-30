@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/danielalves96/technical-intelligence-front/compare/v1.1.0...v1.2.0) (2022-12-30)
+
+
+### Features
+
+* **app:** add changelog ([25e5424](https://github.com/danielalves96/technical-intelligence-front/commit/25e54240c3e7072f09e9273b243dd44234d3931a))
+
 ## 1.1.0 (2022-12-30)
 
 ### Features
