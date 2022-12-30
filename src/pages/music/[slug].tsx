@@ -26,5 +26,11 @@ export default function Music() {
     setTrack(trackDetails);
   }, [result]);
 
-  return track ? <MusicDetails track={track} /> : <></>;
+  return track ? (
+    <>
+      <MusicDetails track={track} />
+    </>
+  ) : (
+    <></>
+  );
 }

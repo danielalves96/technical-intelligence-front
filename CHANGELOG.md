@@ -4,7 +4,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## 1.1.0 (2022-12-30)
 
-
 ### Features
 
 * add new music ([6948d59](https://github.com/danielalves96/technical-intelligence-front/commit/6948d598672d91070ce62196f29c54cb140635bb))
