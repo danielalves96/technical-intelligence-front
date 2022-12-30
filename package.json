@@ -1,7 +1,7 @@
 {
   "name": "technical-intelligence-site",
   "description": "Best website for a best dj and producer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "author": "Daniel Luiz Alves <daniel.madeireira@gmail.com> ",
   "license": "MIT",
@@ -19,7 +19,8 @@
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
     "postinstall": "husky install",
     "commit": "cz",
-    "codegen": "graphql-codegen --config codegen.yml"
+    "codegen": "graphql-codegen --config codegen.yml",
+    "release": "standard-version"
   },
   "lint-staged": {
     "./src/**/*.{ts,js,jsx,tsx}": [
@@ -45,6 +46,7 @@
     "react-image-gallery": "1.2.7",
     "react-scroll-to-top": "1.0.8",
     "react-toastify": "8.2.0",
+    "standard-version": "9.5.0",
     "styled-components": "5.3.5",
     "urql": "3.0.3"
   },
@@ -67,7 +69,6 @@
     "@typescript-eslint/parser": "5.17.0",
     "babel-loader": "^8.2.4",
     "babel-plugin-styled-components": "2.0.6",
-    "commitizen": "4.2.4",
     "css-loader": "^5.1.1",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.12.0",
